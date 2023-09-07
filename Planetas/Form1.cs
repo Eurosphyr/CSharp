@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Planetas.Form1;
+
 
 namespace Planetas
 {
@@ -18,6 +20,8 @@ namespace Planetas
 		public Image SelectedPlanetImage { get; private set; }
 		public double SelectedPlanetDistancia { get; private set; }
 		public string SelectedPlanetMateria { get; private set; }
+
+
 
 
 
@@ -52,6 +56,15 @@ namespace Planetas
 			InitializeComponent();
 			InitializePlanets();
 			this.FormClosing += Form1_FormClosing;
+			Custom_Border customPanel = new Custom_Border
+			{
+				Location = new Point(50, 50),
+				Size = new Size(100, 100),
+				BackColor = Color.Red,
+				BorderWidth = 4
+				};
+			Controls.Add(customPanel);
+
 		}
 
 		private void InitializePlanets()
@@ -100,9 +113,7 @@ namespace Planetas
 				}
 			}
 		}
-
-
-
+	
 
 
 		private void rdb_venus_CheckedChanged(object sender, EventArgs e)
